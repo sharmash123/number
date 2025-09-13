@@ -12,21 +12,17 @@
       margin: 0;
       padding: 0;
     }
-
     header {
       background-color: #2c3e50;
       color: white;
       padding: 15px 30px;
       text-align: center;
     }
-
     h2 {
       text-align: center;
       margin: 20px;
       font-size: 1.2rem;
     }
-
-    /* Input Box */
     .input-box {
       text-align: center;
       margin: 20px;
@@ -35,7 +31,6 @@
       justify-content: center;
       gap: 10px;
     }
-
     .input-box input[type="file"],
     .input-box input[type="text"],
     .input-box input[type="number"],
@@ -47,7 +42,6 @@
       width: 220px;
       max-width: 100%;
     }
-
     .input-box button {
       font-weight: bold;
       font-size: 16px;
@@ -60,54 +54,44 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
-
     .input-box button:hover {
       background-color: #2980b9;
       transform: scale(1.05);
     }
-
-    /* Grid Table */
     .table-container {
       overflow-x: auto;
       margin: 0 auto;
       max-width: 100%;
     }
-
     table {
       border-collapse: collapse;
       margin: 0 auto;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       min-width: 400px;
     }
-
     td {
       border: 1px solid #000000;
-      aspect-ratio: 1 / 1;   /* 🔥 Keeps cells square */
-      min-width: 55px;       /* Base size */
-      min-height: 55px;
+      width: 50px;
+      height: 50px;
       text-align: center;
-      font-size: 18px;       /* Bigger font */
+      font-size: 16px;
       cursor: pointer;
       background-color: #ffffff;
       position: relative;
     }
-
     input.cell-input {
       width: 100%;
       height: 100%;
-      font-size: inherit;
+      font-size: 16px;
       text-align: center;
       border: none;
       outline: none;
       background: transparent;
     }
-
     .red {
       color: red;
       font-weight: bold;
     }
-
-    /* Summary */
     .summary-box {
       margin: 20px auto;
       max-width: 95%;
@@ -117,27 +101,21 @@
       border-radius: 10px;
       font-size: 15px;
     }
-
     .summary-box ul {
       list-style: none;
       padding-left: 0;
     }
-
-    /* 📱 Mobile Responsive */
     @media (max-width: 600px) {
       header h1 {
         font-size: 1.3rem;
       }
-
       h2 {
         font-size: 1rem;
       }
-
       .input-box {
         flex-direction: column;
         gap: 12px;
       }
-
       .input-box input,
       .input-box button,
       .input-box select {
@@ -145,11 +123,10 @@
         font-size: 14px;
         padding: 8px;
       }
-
       td {
-        min-width: 65px;   /* Bigger squares on mobile */
-        min-height: 65px;
-        font-size: 20px;
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
       }
     }
   </style>
@@ -158,9 +135,7 @@
   <header>
     <h1>CN Grid with History</h1>
   </header>
-
   <h2>Upload an image or enter digits to auto-fill the grid</h2>
-
   <div class="input-box">
     <input type="file" id="imageInput" accept="image/*" />
     <button onclick="processImage()">Fill from Image</button>
@@ -175,18 +150,15 @@
     <input type="number" id="colsInput" placeholder="Columns (e.g., 7)" min="1" />
     <button id="resizeButton">Resize Grid</button>
   </div>
-
   <div class="table-container">
     <table id="grid">
       <tbody></tbody>
     </table>
   </div>
-
   <div class="summary-box">
     <h3>📋 CN Sequences Found (Vertical)</h3>
     <ul id="sequenceList"></ul>
   </div>
-
   <script src="compare-cn.js"></script>
 </body>
 </html>
